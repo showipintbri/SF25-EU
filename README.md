@@ -17,6 +17,6 @@ Many times I asked ChatGPT after uploading an image of The Scream, "convert this
 So I switched my methodology (prompt engineering). I started to ask ChatGPT to write me some python code to convert an image to ascii art, which is successfully did but there were little issues that made it unusable for my purpose. I guess I could've embeded the ascii text in packets and created a different challenge but its not what I wanted at the time.
  - Scaling was off
 
-![]()
+![](ascii.png)
 
 
