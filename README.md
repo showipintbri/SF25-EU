@@ -7,6 +7,9 @@
  - Use Scapy/Python to read the CSV and write to a PCAP file using the coordinates "x" as packet timestamp and "y" as TCP payload length using "x" character.
  - Profit
 
+## Pipeline
+[index.html](index.html) --> [coords.csv](coords.csv) --> [sort_csv.py](sort_csv.py) --> [sorted.csv](sorted.csv) --> [pcap_writer.py](pcap_writer.py) --> [name_the_artist.pcap](name_the_artist.pcap)
+
 **WARNING**: Contains spoilers!!!
 
 ## History
@@ -52,3 +55,4 @@ Once I had all the coordinates (after a few thousand clicks), I copied and saved
 
 In order for the packet timing to work in the end-state I needed to sort the *.CSV by the "x" coordinate [sort_csv.py](sort_csv.py), so the timing of the packets would be sequential and not create negative (-) relative timestamps.
 
+Once I had a sorted CSV, I used Scapy to write the PCAP file: [pcap_writer.py](pcap_writer.py), using "x" coordinate as the absolute time, and "y" coordinate as TCP payload length.
