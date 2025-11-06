@@ -11,12 +11,15 @@ So, I got this idea but how to make it happen? I started on the journey to creat
 ## AI Fail :(
 Many times I asked ChatGPT after uploading an image of The Scream, "convert this image to a scatter plot and provide me with a CSV of coordinates of each point", "recreate this image using only points as dots, in a dot-matrix style rendering of this image", etc... and many more fails.
 
-![](https://github.com/showipintbri/SF25-EU/blob/111f15cf20e493e731c18fdf914a22fa811b16f8/Figure_1.png)
+![](Figure_1.png)
 
 ## Moar AI Fail
 So I switched my methodology (prompt engineering). I started to ask ChatGPT to write me some python code to convert an image to ascii art, which is successfully did but there were little issues that made it unusable for my purpose. I guess I could've embeded the ascii text in packets and created a different challenge but its not what I wanted at the time.
  - Scaling was off
 
+**NOTE:** I had to do some serious image resizing to make this below screenshot anything that resembles The Scream.
 ![](ascii.png)
 
+**RAW Text Files Here:**
+ - (the_scream_ascii.txt)
 
