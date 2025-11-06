@@ -43,4 +43,5 @@ Since AI was failing to do the actual work I wanted, I switched to having AI spi
 > I want to be able to click on the image and have a dot placed at the coordinates I clicked, and I want the coordinates appended to the text field below the image.
 
 The resulting utility was: [index.html](index.html)
+![](index.png)
 
