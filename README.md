@@ -22,4 +22,6 @@ So I switched my methodology (prompt engineering). I started to ask ChatGPT to w
 
 **RAW Text Files Here:**
  - [the_scream_ascii.txt](the_scream_ascii.txt)
+ - [the_scream_ascii.old.txt](the_scream_ascii.old.txt)
+ - [the_scream_ascii.old2.txt](the_scream_ascii.old2.txt)
 
