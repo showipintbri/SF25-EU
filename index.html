@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Image Click Coordinates</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+    }
+    #frame {
+      position: relative;
+      display: inline-block;
+      border: 2px solid #333;
+    }
+    #image {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to right,
+        transparent,
+        transparent 19px,
+        rgba(0,0,0,0.2) 20px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 19px,
+        rgba(0,0,0,0.2) 20px
+      );
+      pointer-events: none;
+    }
+    #clickArea {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    #coords {
+      margin-top: 20px;
+      width: 80%;
+      max-width: 600px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Upload an Image</h2>
+  <input type="file" id="fileInput" accept="image/*" />
+  <div id="frame">
+    <img id="image" src="" alt="Your Image" />
+    <div id="overlay"></div>
+    <div id="clickArea"></div>
+  </div>
+  <h3>Coordinates (x,y)</h3>
+  <textarea id="coords" readonly></textarea>
+
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const image = document.getElementById('image');
+    const clickArea = document.getElementById('clickArea');
+    const coords = document.getElementById('coords');
+
+    // Define dot style
+    const dotColor = 'red';
+    const dotRadius = 5; // in pixels
+
+    fileInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (event) => {
+          image.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    clickArea.addEventListener('click', (e) => {
+      const rect = image.getBoundingClientRect();
+      const x = Math.round(e.clientX - rect.left);
+      const y = Math.round(e.clientY - rect.top);
+      coords.value += `${x},${y}\n`;
+
+      // Create dot
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      dot.style.width = `${dotRadius * 2}px`;
+      dot.style.height = `${dotRadius * 2}px`;
+      dot.style.background = dotColor;
+      dot.style.left = `${x - dotRadius}px`;
+      dot.style.top = `${y - dotRadius}px`;
+      clickArea.appendChild(dot);
+    });
+  </script>
+</body>
+</html>
+
