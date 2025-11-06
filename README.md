@@ -56,3 +56,6 @@ Once I had all the coordinates (after a few thousand clicks), I copied and saved
 In order for the packet timing to work in the end-state I needed to sort the *.CSV by the "x" coordinate [sort_csv.py](sort_csv.py), so the timing of the packets would be sequential and not create negative (-) relative timestamps.
 
 Once I had a sorted CSV, I used Scapy to write the PCAP file: [pcap_writer.py](pcap_writer.py), using "x" coordinate as the absolute time, and "y" coordinate as TCP payload length.
+
+The final result from Wireshark:
+![](final.png)
