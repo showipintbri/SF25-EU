@@ -47,3 +47,8 @@ The resulting utility was: [index.html](index.html)
 
 Example Use:
 ![](sample.png)
+
+Once I had all the coordinates (after a few thousand clicks), I copied and saved the data into a *.CSV file.
+
+In order for the packet timing to work in the end-state I needed to sort the *.CSV by the "x" coordinate [sort_csv.py](sort_csv.py), so the timing of the packets would be sequential and not create negative (-) relative timestamps.
+
