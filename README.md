@@ -11,6 +11,8 @@ So, I got this idea but how to make it happen? I started on the journey to creat
 ## AI Fail :(
 Many times I asked ChatGPT after uploading an image of The Scream, "convert this image to a scatter plot and provide me with a CSV of coordinates of each point", "recreate this image using only points as dots, in a dot-matrix style rendering of this image", etc... and many more fails.
 
+![https://github.com/showipintbri/SF25-EU/blob/111f15cf20e493e731c18fdf914a22fa811b16f8/Figure_1.png]
+
 ## Moar AI Fail
 So I switched my methodology (prompt engineering). I started to ask ChatGPT to write me some python code to convert an image to ascii art, unsuccessfully :(
 
